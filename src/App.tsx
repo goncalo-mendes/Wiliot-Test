@@ -19,21 +19,17 @@ function App() {
     const [data1, setData1] = useState<socketResponse[]>([]);
     const [data2, setData2] = useState<socketResponse[]>([]);
 
-    // notification to inform socket closure
     clientSocket.onopen = () => {
-        toast.info('Socket Connected');
+        toast.info('We are Connected');
     };
 
-    // notification to inform socket closure
     clientSocket.onclose = () => {
-        toast.warn('Socket Disconnected');
+        toast.warn('We are Disconnected');
     }
 
     clientSocket.onmessage = (responseData: any) => {
-        //parse the data
         let dataFromServer: socketResponse[] = JSON.parse(responseData.data);
 
-        // filter by id = 1  and data <= 100 like the challenge said
         let serverData1: socketResponse[] = dataFromServer.filter(data => data.id === 1 && data.data <= 100 );
 
         setData1((previousData1) => {
@@ -45,11 +41,9 @@ function App() {
             return previousData1?.concat(serverData1);
         });
 
-        // filter by id = 2  and data <= 100 like challenge said
         let serverData2: socketResponse[] = dataFromServer.filter(data => data.id === 2 && data.data <= 100 );
 
         setData2((previousData2) => {
-            // same thing as in setData1
             if (Date.now() - previousData2[0]?.timestamp > 20000) {
                 previousData2.shift();
             }
