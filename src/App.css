@@ -2,37 +2,75 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title{
+  padding-right: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.AppHeader {
+  width: 100vw;
+  height: 70px;
+  border-bottom: solid 1px black;
+  text-align: right;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.AppHeader p{
+  margin-top: 0;
+}
+.AppHeader h2{
+  margin-bottom: 0;
+}
+
+.informationBlocks {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  width: 1000px;
+  margin: 40px auto 0;
 }
 
-.App-link {
-  color: #61dafb;
+.infoBlock {
+  border: 1px solid black;
+  width: 400px;
+  height: 125px;
+  text-align: left;
+  padding-left: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chartBlock {
+  width: 1000px;
+  height: 600px;
+  margin: 40px auto 0;
+  border: 1px solid black;
+}
+
+.tableChart h2 {
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  width: 100px;
+  border-bottom: 1px solid black;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.identifiers {
+  display: flex;
+}
+
+.squareId1 {
+  width: 10px;
+  height: 10px;
+  background-color: violet;
+  margin: auto 10px;
+}
+
+.squareId2 {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin: auto 10px;
 }
